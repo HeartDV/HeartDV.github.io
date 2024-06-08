@@ -19,3 +19,25 @@ function countLike2() {
 
 btnLike2.addEventListener("click", countLike2)
 
+
+const btnLike3 = document.getElementById("btnLike3")
+const count3 = document.getElementById("count3")
+
+function countLike3() {
+  let likeCounts = parseInt(count3.value) + 1
+  count3.textContent = likeCounts.toString()
+}
+
+btnLike3.addEventListener("click", countLike3)
+
+
+const btnLike4 = document.getElementById("btnLike4")
+const count4 = document.getElementById("count4")
+
+function countLike4() {
+  let likeCounts = parseInt(count4.value) + 1
+  count4.textContent = likeCounts.toString()
+}
+
+btnLike4.addEventListener("click", countLike4)
+
