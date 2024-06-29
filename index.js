@@ -63,9 +63,6 @@ function addToCart() {
     }
 }
 
-function processPayment() {
-    // Process payment logic if needed
-}
 
 
 /*
