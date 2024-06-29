@@ -22,12 +22,12 @@ var product6 = document.getElementById('product6');
 var qty6 = document.getElementById('qty6');
 var price6 = document.getElementById('price6');
 
-var carts = document.getElementById('carts');
-var total = document.getElementById('total');
-var cash = document.getElementById('cash');
-var change = document.getElementById('change');
+var carts = document.getElementById('orderList');
+var total = document.getElementById('totalAmount');
+var cash = document.getElementById('cashTendered');
+var change = document.getElementById('changeAmount');
 
-function addOrder() {
+function addToCart() {
     carts.textContent = "";
     var totalCost = 0;
 
@@ -62,19 +62,21 @@ function addOrder() {
         totalCost += parseFloat(qty6.value) * parseFloat(price6.textContent);
     }
 
-    total.value = totalCost.toFixed(2);
+    total.textContent = "Php " + totalCost.toFixed(2);
     if (parseFloat(cash.value) > 0) {
-        change.value = (parseFloat(cash.value) - totalCost).toFixed(2);
+        change.textContent = "Php " + (parseFloat(cash.value) - totalCost).toFixed(2);
     }
 }
 
-qty1.addEventListener('keyup', addOrder);
-qty2.addEventListener('keyup', addOrder);
-qty3.addEventListener('keyup', addOrder);
-qty4.addEventListener('keyup', addOrder);
-qty5.addEventListener('keyup', addOrder);
-qty6.addEventListener('keyup', addOrder);
-cash.addEventListener('keyup', addOrder);
+qty1.addEventListener('keyup', addToCart);
+qty2.addEventListener('keyup', addToCart);
+qty3.addEventListener('keyup', addToCart);
+qty4.addEventListener('keyup', addToCart);
+qty5.addEventListener('keyup', addToCart);
+qty6.addEventListener('keyup', addToCart);
+cash.addEventListener('keyup', addToCart);
+    
+
 /*
   const btnLike1 = document.getElementById("btnLike1")
 const count1 = document.getElementById("count1")
