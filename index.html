@@ -51,22 +51,22 @@
                 <input type="number" class="form-control" id="qty6" placeholder="Enter quantity"/><br>
             </div>
            </div>
-    <div class="row mt-3">
-        <div class="col-6 offset-3">
-            <input type="text" class="form-control mb-2" id="customerName" placeholder="Customer Name"/>
-            <input type="number" class="form-control mb-2" id="amountPaid" placeholder="Amount Paid"/>
-            <button class="btn btn-primary btn-block" onclick="addToCart()">Add to Cart</button>
+    
+            <div class="row">
+            <div class="col-12 text-center">
+                <input type="text" class="form-control" id="customerName" placeholder="Enter customer name"/>
+                <input type="number" class="form-control" id="amount" placeholder="Enter amount"/>
+                <button class="btn btn-success" onclick="pay()">Pay</button>
+            </div>
         </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12">
-            <h4>Orders</h4>
-            <textarea class="form-control" rows="5" id="orderList" readonly></textarea><br>
-            <div>
-                <span>Total: </span><span id="totalAmount">Php 0.00</span><br>
-                <span>Cash Tendered: </span><input type="text" class="form-control" id="cashTendered" readonly/><br>
-                <span>Change: </span><span id="changeAmount">Php 0.00</span><br>
-                <button class="btn btn-success btn-block mt-2" onclick="processPayment()">Pay</button>
+        <div class="row mt-4">
+            <div class="col-12">
+                <label for="carts">Orders</label><br>
+                <textarea class="form-control" rows="15" id="carts" readonly style="width:100%; font-size: 12px;"></textarea><br>
+                <input type="text" class="form-control border-0" id="total" readonly placeholder="Total"/>
+                <input type="number" class="form-control" id="cash" placeholder="Cash Tendered"/>
+                <input type="text" class="form-control border-0" id="change" readonly placeholder="Change"/><br>
+                <button class="btn btn-primary" onclick="clearOrders()">Clear Orders</button>
             </div>
         </div>
      </div>
