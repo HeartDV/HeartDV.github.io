@@ -12,6 +12,7 @@ var change = document.getElementById('change');
 
 // Function to add order to cart and calculate total
 function pay() {
+    console.log("Pay button clicked");
     var customerName = document.getElementById('customerName').value.trim();
     var amount = parseFloat(document.getElementById('amount').value);
 
