@@ -50,16 +50,27 @@
                 <label for="product6" id="price6">50000.00</label>
                 <input type="number" class="form-control" id="qty6" placeholder="Enter quantity"/><br>
             </div>
-            <div class="col-12">
-                <button class="btn-add" id="addToCart">Add to Cart</button><br>
-                <label for="carts">Orders</label><br>
-                <textarea class="form-control" rows="29" id="carts" cols="200" readonly style="width:350px;height: 400px;font-size: 12px;"></textarea>
-                <input type="text" class="form-control border-0" id="total" readonly placeholder="Total"/>
-                <input type="number" class="form-control" id="cash" placeholder="Cash Tendered"/>
-                <input type="text" class="form-control border-0" id="change" readonly placeholder="Change"/>
-            </div>
+           </div>
+    <div class="row mt-3">
+        <div class="col-6 offset-3">
+            <input type="text" class="form-control mb-2" id="customerName" placeholder="Customer Name"/>
+            <input type="number" class="form-control mb-2" id="amountPaid" placeholder="Amount Paid"/>
+            <button class="btn btn-primary btn-block" onclick="addToCart()">Add to Cart</button>
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <h4>Orders</h4>
+            <textarea class="form-control" rows="5" id="orderList" readonly></textarea><br>
+            <div>
+                <span>Total: </span><span id="totalAmount">Php 0.00</span><br>
+                <span>Cash Tendered: </span><input type="text" class="form-control" id="cashTendered" readonly/><br>
+                <span>Change: </span><span id="changeAmount">Php 0.00</span><br>
+                <button class="btn btn-success btn-block mt-2" onclick="processPayment()">Pay</button>
+            </div>
+        </div>
+     </div>
+   </div>
     <script src="index.js"></script>
 </body>
   </html>
