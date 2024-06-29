@@ -21,7 +21,7 @@ function pay() {
     }
 
     var orderDetails = "";
-    products.forEach(function(product, index) {
+    products.forEach(function(product) {
         var qtyElement = document.getElementById(product.qtyId);
         var qty = parseFloat(qtyElement.value);
 
@@ -72,7 +72,12 @@ function clearOrders() {
     totalElement.value = "";
     cash.value = "";
     change.value = "";
-        }
+}
+
+// Event listener for Pay button
+document.getElementById('payButton').addEventListener('click', pay);
+
+
 
      
 /*
