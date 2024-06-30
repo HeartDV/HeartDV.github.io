@@ -77,6 +77,7 @@ qty6.addEventListener('keyup', addOrder);
 cash.addEventListener('keyup', addOrder);
 
 function clearOrders() {
+    console.log("Clear Orders function called);
     carts.textContent = "";
     total.value = "";
     cash.value = "";
