@@ -75,6 +75,13 @@ qty4.addEventListener('keyup', addOrder);
 qty5.addEventListener('keyup', addOrder);
 qty6.addEventListener('keyup', addOrder);
 cash.addEventListener('keyup', addOrder);
+
+function clearOrders() {
+    carts.textContent = "";
+    total.value = "";
+    cash.value = "";
+    change.value = "";
+}
                                    
             
 
