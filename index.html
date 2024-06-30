@@ -50,27 +50,16 @@
                 <label for="product6" id="price6">50000.00</label>
                 <input type="number" class="form-control" id="qty6" placeholder="Enter quantity"/><br>
             </div>
-           </div>
-         <div class="row">
-            <!-- Customer details and Pay button -->
-            <div class="col-4 text-center">
-                <input type="text" class="form-control" id="customerName" placeholder="Enter customer name"/>
-                <input type="number" class="form-control" id="amount" placeholder="Enter amount"/>
-                <button id="payButton" class="btn btn-success">Pay</button>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <!-- Orders and Payment Details -->
-            <div class="col-12">
+           <div class="col-4">
                 <label for="carts">Orders</label><br>
-                <textarea class="form-control" rows="15" id="carts" readonly style="width:100%; font-size: 12px;"></textarea><br>
+                <textarea class="form-control" rows="29" id="carts" cols="200" readonly style="width:350px;height: 400;font-size: 12px;"></textarea>
                 <input type="text" class="form-control border-0" id="total" readonly placeholder="Total"/>
                 <input type="number" class="form-control" id="cash" placeholder="Cash Tendered"/>
-                <input type="text" class="form-control border-0" id="change" readonly placeholder="Change"/><br>
-                <button class="btn btn-primary" onclick="clearOrders()">Clear Orders</button>
-            </div>
+                <input type="text" class="form-control border-0" id="change" readonly placeholder="Change"/>
+           </div>
         </div>
      </div>
+  </div>
     <script src="index.js"></script>
 </body>
   </html>
