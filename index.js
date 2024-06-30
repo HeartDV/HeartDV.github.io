@@ -9,13 +9,27 @@ document.addEventListener('DOMContentLoaded', function () {
         product6: 75000
     };
 
+    const products = {
+        product1: 'Samsung S21',
+        product2: 'Samsung S22',
+        product3: 'iPhone 12',
+        product4: 'iPhone 13',
+        product5: 'OnePlus 9',
+        product6: 'Google Pixel 6'
+    };
+
     // Calculate total cost
     function calculateTotal() {
         let total = 0;
+        let orders = '';
         for (let i = 1; i <= 6; i++) {
             const quantity = document.getElementById(`qty${i}`).value;
-            total += quantity * prices[`product${i}`];
+            if (quantity > 0) {
+                orders += `${quantity} x ${products[`product${i}`]} @ ${prices[`product${i}`]} each\n`;
+                total += quantity * prices[`product${i}`];
+            }
         }
+        document.getElementById('carts').value = orders.trim();
         document.getElementById('total').value = total.toFixed(2);
         return total;
     }
@@ -34,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     document.getElementById('cash').addEventListener('input', calculateChange);
 });
+
 
 
      
