@@ -78,7 +78,21 @@ qty6.addEventListener('keyup', addOrder);
 cash.addEventListener('keyup', addOrder);
 
                                    
-            
+// Wait for the DOM content to fully load before executing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener to the "Clear Orders" button
+    document.getElementById('clearOrdersButton').addEventListener('click', clearOrders);
+});
+
+// Function to clear orders
+function clearOrders() {
+    // Clear orders logic here
+    document.getElementById('carts').textContent = "";
+    document.getElementById('total').value = "";
+    document.getElementById('cash').value = "";
+    document.getElementById('change').value = "";
+}
+
 
 
 
