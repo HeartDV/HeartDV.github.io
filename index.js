@@ -27,6 +27,7 @@ var total = document.getElementById('total');
 var cash = document.getElementById('cash');
 var change = document.getElementById('change');
 
+
 function addOrder() {
     carts.textContent = "";
     var totalCost = 0;
@@ -76,12 +77,6 @@ qty5.addEventListener('keyup', addOrder);
 qty6.addEventListener('keyup', addOrder);
 cash.addEventListener('keyup', addOrder);
 
-function clearOrders() {
-    carts.textContent = "";
-    total.value = "";
-    cash.value = "";
-    change.value = "";
-}
                                    
             
 
