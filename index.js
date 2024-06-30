@@ -1,83 +1,39 @@
-// Variables for products and quantities
-var products = [
-    { name: "Samsung S21", price: 27000.00, qtyId: "qty1" },
-    { name: "Samsung S22", price: 37000.00, qtyId: "qty2" },
-    { name: "Samsung S23", price: 45000.00, qtyId: "qty3" }
-];
+document.addEventListener('DOMContentLoaded', function () {
+    // Product prices
+    const prices = {
+        product1: 27000,
+        product2: 37000,
+        product3: 45000,
+        product4: 55000,
+        product5: 65000,
+        product6: 75000
+    };
 
-var carts = document.getElementById('carts');
-var totalElement = document.getElementById('total');
-var cash = document.getElementById('cash');
-var change = document.getElementById('change');
-
-// Function to add order to cart and calculate total
-function pay() {
-    console.log("Pay button clicked");
-    var customerName = document.getElementById('customerName').value.trim();
-    var amount = parseFloat(document.getElementById('amount').value);
-
-    if (!customerName || isNaN(amount) || amount <= 0) {
-        alert("Please enter valid customer name and amount.");
-        return;
+    // Calculate total cost
+    function calculateTotal() {
+        let total = 0;
+        for (let i = 1; i <= 6; i++) {
+            const quantity = document.getElementById(`qty${i}`).value;
+            total += quantity * prices[`product${i}`];
+        }
+        document.getElementById('total').value = total.toFixed(2);
+        return total;
     }
 
-    var orderDetails = "";
-    products.forEach(function(product) {
-        var qtyElement = document.getElementById(product.qtyId);
-        var qty = parseFloat(qtyElement.value);
-
-        if (qty > 0) {
-            var order = qty.toString() + " pc/s x " + product.price.toFixed(2) + " ------ " + product.name + " ------ Php " + (qty * product.price).toFixed(2) + "\n";
-            orderDetails += order;
-        }
-    });
-
-    if (orderDetails === "") {
-        alert("Please enter quantities for at least one product.");
-        return;
+    // Calculate change
+    function calculateChange() {
+        const total = calculateTotal();
+        const cash = document.getElementById('cash').value;
+        const change = cash - total;
+        document.getElementById('change').value = change.toFixed(2);
     }
 
-    var order = "Customer: " + customerName + " - Amount: Php " + amount.toFixed(2) + "\n";
-    carts.value += order + orderDetails;
-    updateTotal();
-    clearInputs();
-}
-
-// Function to update total cost
-function updateTotal() {
-    var totalCost = 0;
-    var orders = carts.value.split("\n");
-    orders.forEach(function(order) {
-        if (order.trim() !== "") {
-            var parts = order.split(" ------ ");
-            var price = parseFloat(parts[1]);
-            totalCost += price;
-        }
-    });
-    totalElement.value = totalCost.toFixed(2);
-}
-
-// Function to clear inputs after adding an order
-function clearInputs() {
-    document.getElementById('customerName').value = "";
-    document.getElementById('amount').value = "";
-    products.forEach(function(product) {
-        var qtyElement = document.getElementById(product.qtyId);
-        qtyElement.value = "";
-    });
-}
-
-// Function to clear all orders
-function clearOrders() {
-    carts.value = "";
-    totalElement.value = "";
-    cash.value = "";
-    change.value = "";
-}
-
-// Event listener for Pay button
-document.getElementById('payButton').addEventListener('click', pay);
-
+    // Add event listeners
+    for (let i = 1; i <= 6; i++) {
+        document.getElementById(`qty${i}`).addEventListener('input', calculateTotal);
+    }
+    document.getElementById('cash').addEventListener('input', calculateChange);
+});
 
 
      
