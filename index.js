@@ -75,10 +75,10 @@ qty3.addEventListener('keyup', addOrder);
 qty4.addEventListener('keyup', addOrder);
 qty5.addEventListener('keyup', addOrder);
 qty6.addEventListener('keyup', addOrder);
+
 cash.addEventListener('keyup', addOrder);
 
                                    
-
 function clearOrders() {
     console.log("Clear Button orders clicked);
     document.getElementById('carts').textContent = "";
