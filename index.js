@@ -85,6 +85,7 @@ function clearOrders() {
     document.getElementById('total').value = "";
     document.getElementById('cash').value = "";
     document.getElementById('change').value = "";
+}
 
 
      
