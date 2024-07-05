@@ -64,10 +64,14 @@ function addOrder() {
     }
 
     total.value = totalCost.toFixed(2);
+    
     if (parseFloat(cash.value) > 0) {
         change.value = (parseFloat(cash.value) - totalCost).toFixed(2);
+    } else {
+        change.value = "";
     }
 }
+
 
 qty1.addEventListener('keyup', addOrder);
 qty2.addEventListener('keyup', addOrder);
@@ -75,16 +79,15 @@ qty3.addEventListener('keyup', addOrder);
 qty4.addEventListener('keyup', addOrder);
 qty5.addEventListener('keyup', addOrder);
 qty6.addEventListener('keyup', addOrder);
-cash.addEventListener('keyup', addOrder);
 
 
                                   
 function clearOrders() {
-    'console.log'("Clear Button orders clicked);
-    document.getElementById('carts').textContent = "";
-    document.getElementById('total').value = "";
-    document.getElementById('cash').value = "";
-    document.getElementById('change').value = "";
+    console.log("Clear Button orders clicked);
+    carts.textContent = "";
+    total.value = "";
+    cash.value = "";
+    change.value = "";
 }
 
 document.getElementById('clearOrdersButton').addEventListener('click', clearOrders);
