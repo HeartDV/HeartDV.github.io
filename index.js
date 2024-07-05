@@ -27,6 +27,7 @@ var total = document.getElementById('total');
 var cash = document.getElementById('cash');
 var change = document.getElementById('change');
 
+
 function addOrder() {
     carts.textContent = "";
     var totalCost = 0;
@@ -74,8 +75,9 @@ qty3.addEventListener('keyup', addOrder);
 qty4.addEventListener('keyup', addOrder);
 qty5.addEventListener('keyup', addOrder);
 qty6.addEventListener('keyup', addOrder);
-
 cash.addEventListener('keyup', addOrder);
+
+
                                   
 function clearOrders() {
     console.log("Clear Button orders clicked);
@@ -84,7 +86,6 @@ function clearOrders() {
     document.getElementById('cash').value = "";
     document.getElementById('change').value = "";
 }
-
 document.getElementById('clearOrdersButton').addEventListener('click', clearOrders);
 
 
