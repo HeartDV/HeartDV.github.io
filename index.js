@@ -87,5 +87,6 @@ function clearOrders() {
     document.getElementById('change').value = "";
 }
 
+document.getElementById('clearOrdersButton').addEventListener('click', clearOrders);
 
      
