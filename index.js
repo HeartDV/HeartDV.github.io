@@ -34,32 +34,32 @@ function addOrder() {
     var totalCost = 0;
 
     if (parseFloat(qty1.value) > 0) {
-        var order = qty1.value.toString() + " pc/s x " + price1.textContent + " ------ " + product1.textContent + " ------ ₱ " + (parseFloat(qty1.value) * parseFloat(price1.textContent)) + "\n";
+        var order = qty1.value.toString() + " pc/s x " + price1.textContent + " ------ " + product1.textContent + " ------ ₱" + (parseFloat(qty1.value) * parseFloat(price1.textContent)) + "\n";
         carts.textContent += order;
         totalCost += parseFloat(qty1.value) * parseFloat(price1.textContent);
     }
     if (parseFloat(qty2.value) > 0) {
-        var order = qty2.value.toString() + " pc/s x " + price2.textContent + " ------ " + product2.textContent + " ------ ₱ " + (parseFloat(qty2.value) * parseFloat(price2.textContent)) + "\n";
+        var order = qty2.value.toString() + " pc/s x " + price2.textContent + " ------ " + product2.textContent + " ------ ₱" + (parseFloat(qty2.value) * parseFloat(price2.textContent)) + "\n";
         carts.textContent += order;
         totalCost += parseFloat(qty2.value) * parseFloat(price2.textContent);
     }
     if (parseFloat(qty3.value) > 0) {
-        var order = qty3.value.toString() + " pc/s x " + price3.textContent + " ------ " + product3.textContent + " ------ ₱ " + (parseFloat(qty3.value) * parseFloat(price3.textContent)) + "\n";
+        var order = qty3.value.toString() + " pc/s x " + price3.textContent + " ------ " + product3.textContent + " ------ ₱" + (parseFloat(qty3.value) * parseFloat(price3.textContent)) + "\n";
         carts.textContent += order;
         totalCost += parseFloat(qty3.value) * parseFloat(price3.textContent);
     }
     if (parseFloat(qty4.value) > 0) {
-        var order = qty4.value.toString() + " pc/s x " + price4.textContent + " ------ " + product4.textContent + " ------ ₱ " + (parseFloat(qty4.value) * parseFloat(price4.textContent)) + "\n";
+        var order = qty4.value.toString() + " pc/s x " + price4.textContent + " ------ " + product4.textContent + " ------ ₱" + (parseFloat(qty4.value) * parseFloat(price4.textContent)) + "\n";
         carts.textContent += order;
         totalCost += parseFloat(qty4.value) * parseFloat(price4.textContent);
     }
     if (parseFloat(qty5.value) > 0) {
-        var order = qty5.value.toString() + " pc/s x " + price5.textContent + " ------ " + product5.textContent + " ------ ₱ " + (parseFloat(qty5.value) * parseFloat(price5.textContent)) + "\n";
+        var order = qty5.value.toString() + " pc/s x " + price5.textContent + " ------ " + product5.textContent + " ------ ₱" + (parseFloat(qty5.value) * parseFloat(price5.textContent)) + "\n";
         carts.textContent += order;
         totalCost += parseFloat(qty5.value) * parseFloat(price5.textContent);
     }
     if (parseFloat(qty6.value) > 0) {
-        var order = qty6.value.toString() + " pc/s x " + price6.textContent + " ------ " + product6.textContent + " ------ ₱ " + (parseFloat(qty6.value) * parseFloat(price6.textContent)) + "\n";
+        var order = qty6.value.toString() + " pc/s x " + price6.textContent + " ------ " + product6.textContent + " ------ ₱" + (parseFloat(qty6.value) * parseFloat(price6.textContent)) + "\n";
         carts.textContent += order;
         totalCost += parseFloat(qty6.value) * parseFloat(price6.textContent);
     }
@@ -82,6 +82,12 @@ cash.addEventListener('keyup', addOrder);
 
 function clearOrders() {
     carts.textContent = "";
+    qty1.value = "";
+    qty2.value = "";
+    qty3.value = "";
+    qty4.value = "";
+    qty5.value = "";
+    qty6.value = "";
     total.value = "";
     cash.value = "";
     change.value = "";
