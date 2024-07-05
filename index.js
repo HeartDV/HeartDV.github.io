@@ -80,7 +80,7 @@ cash.addEventListener('keyup', addOrder);
 
                                   
 function clearOrders() {
-    console.log("Clear Button orders clicked);
+    'console.log'("Clear Button orders clicked);
     document.getElementById('carts').textContent = "";
     document.getElementById('total').value = "";
     document.getElementById('cash').value = "";
